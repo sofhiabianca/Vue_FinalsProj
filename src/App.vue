@@ -171,13 +171,16 @@ body{
 }
 
 .menu-wrap .menu > div > div > ul > li {
+  font-family: "Poppins", sans-serif;
   list-style: none;
   color: #fff;
   font-size: 2rem;
   padding: 1rem;
+  transition: color .3s ease-in-out, box-shadow .5s ease-in-out;
 }
       .menu-wrap .menu > div > div > ul > li:hover {
         color: #000000;
+        box-shadow: inset 600px 0 0 0 #ffffff;;
       }
 .menu-wrap .menu > div > div > ul > li > a {
   color: inherit;
