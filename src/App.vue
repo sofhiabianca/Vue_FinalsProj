@@ -1,4 +1,5 @@
 <script>
+import { RouterLink } from 'vue-router';
 
 </script>
 
@@ -12,9 +13,10 @@
       <div>
         <div>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Introduction</a></li>
-            <li><a href="#">Meet Our Team</a></li>
+            <li><router-Link to="/">Home</router-Link></li>
+            <li><router-Link to="/introduction">Introduction</router-Link></li>
+            <li><router-Link to="/meet">Meet our Team</router-Link></li>
+            <li><router-Link to="/contact">Contact</router-Link></li>
           </ul>
         </div>
       </div>

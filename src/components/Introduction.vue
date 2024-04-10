@@ -1,3 +1,10 @@
+<script>
+export default {
+  name: 'Introduction',
+};
+
+</script>
+
 <template>
       <div class="menu-wrap">
     <input type="checkbox" class="toggler">
