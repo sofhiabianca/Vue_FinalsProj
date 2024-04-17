@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from '@/components/Home.vue';
-import Introduction from '@/components/Introduction.vue';
-import Meet from '@/components/Meet.vue';
-import Contact from '@/components/Contact.vue';
+import Home from '../views/Home.vue';
+import Introduction from '../views/Introduction.vue';
+import Meet from '../views/Meet.vue';
+import Contact from '../views/Contact.vue';
 
-const router = createRouter({
+const router = createRouter ({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes : [
   {
@@ -13,7 +13,7 @@ const router = createRouter({
     component: Home,
   },
   {
-    path: '/introduction',
+    path: '/Introduction',
     name: 'Introduction',
     component: Introduction,
   },
@@ -31,3 +31,4 @@ const router = createRouter({
 })
 
 export default router;
+

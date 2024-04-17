@@ -1,14 +1,28 @@
 <script setup>
 import { RouterView } from 'vue-router'
-import Nav from './components/Nav.vue'
 
 </script>
 
-
 <template>
+
+  <body>
     <Nav/>
     <RouterView />
+    <div class="landingPage">
+      <h1 class="heading-1">Project</h1>
+      <h1 class="heading-2">P</h1>
+      <h1 class="heading-3">ortfolio</h1>
+      
+    </div>
     
+
+    <div class="footer">
+    <div class="row">
+      <hr>
+      <h6>© 2024 by LACANDOLA & MALALA</h6>
+    </div>
+</div>
+  </body>
 </template>
 
 <style scoped>

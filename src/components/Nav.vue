@@ -1,41 +1,28 @@
-<script>
-export default {
-  name: 'Introduction',
-};
+
+<script setup>
+import { RouterLink } from 'vue-router'
 
 </script>
-
 <template>
-      <div class="menu-wrap">
+    <div class="menu-wrap">
     <input type="checkbox" class="toggler">
     <div class="hamburger"><div></div></div>
     <div class="menu">
       <div>
         <div>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Introduction</a></li>
-            <li><a href="#">Meet Our Team</a></li>
+            <li><RouterLink to="/">Home</RouterLink></li>
+            <li><RouterLink to="/Introduction">Introduction</RouterLink></li>
+            <li><RouterLink to="/Meet">Meet our Team</RouterLink></li>
+            <li><RouterLink to="/Contact">Contact</RouterLink></li>
           </ul>
         </div>
       </div>
     </div>
   </div>
-  <div class="intro">
-    <h1 class="introText">Introduction</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt arcu id libero suscipit scelerisque. Donec tristique neque nec neque tempus, a placerat lacus ultricies. Pellentesque in nibh vel ipsum posuere porttitor eget non purus. Duis vel sapien non augue luctus suscipit. Proin iaculis diam auctor ex venenatis, in dictum augue fringilla. Nullam consectetur condimentum nibh sed hendrerit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam suscipit velit et commodo ultrices. Duis ac gravida neque.</p>
-  </div>
-
-  <div class="footer">
-    <div class="row">
-      <hr>
-      <h6>© 2024 by LACANDOLA & MALALA</h6>
-    </div>
-</div>
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins&display=swap');
 /*STYLE FOR MENU*/
 .menu-wrap {
   position: fixed;
@@ -166,13 +153,16 @@ export default {
 }
 
 .menu-wrap .menu > div > div > ul > li {
+  font-family: "Poppins", sans-serif;
   list-style: none;
   color: #fff;
   font-size: 2rem;
   padding: 1rem;
+  transition: color .3s ease-in-out, box-shadow .5s ease-in-out;
 }
       .menu-wrap .menu > div > div > ul > li:hover {
         color: #000000;
+        box-shadow: inset 600px 0 0 0 #ffffff;;
       }
 .menu-wrap .menu > div > div > ul > li > a {
   color: inherit;
@@ -180,9 +170,45 @@ export default {
   transition: color 0.4s ease;
 }
 
-/* STYLE FOR INTRO */
-.introText{
+/*STYLE FOR LANDING PAGE*/
+.heading-1{
   font-family: "Playfair Display", serif;
-  text-align: center;
+  font-size: 8rem;
+  color: #000000;
+  text-transform: uppercase;
+  margin-left: 25%;
+  margin-top: 10%;
 }
+.heading-2{
+  font-family: "Pinyon Script", cursive;
+  font-size: 9rem;
+  color: #000000;
+  text-transform: uppercase;
+  margin-left: 38%;
+
+}
+.heading-3{
+  font-family: "Playfair Display", serif;
+  font-size: 8rem;
+  color: #000000;
+  text-transform: uppercase;
+  margin-left: 45%;
+  margin-top: -13.5%;
+}
+.row h6{
+  width:100%;
+  margin:1% 0%;
+  padding:0.6% 0%;
+  color:#000000;
+  font-size:1rem;
+  font-family: "Poppins", sans-serif;
+}
+
+/*STYLE FOR FOOTER*/
+.footer{
+background:transparent;
+margin-top: 25%;
+text-align:center;
+}
+
 </style>
