@@ -19,11 +19,22 @@ import { RouterLink } from 'vue-router'
         </div>
       </div>
     </div>
+    <h1 class="logo">ctrl.</h1>
   </div>
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 /*STYLE FOR MENU*/
+.logo{
+  font-family: "Libre Baskerville", serif;
+  position: absolute;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #A53316;
+  margin-left: 1250px;
+  margin-top: 4px;
+}
 .menu-wrap {
   position: fixed;
   top: 0;

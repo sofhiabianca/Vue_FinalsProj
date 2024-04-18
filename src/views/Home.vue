@@ -18,8 +18,8 @@ import { RouterView } from 'vue-router'
           </div>
           <div class="info">
               <h4>Introduction</h4>
-              <p class="intro-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-              <p class="intro-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+              <p class="intro-1">Project ctrl. stands as a dynamic and innovative visual designing team, distinguished by its expertise in crafting compelling brand identities, capturing captivating moments through photography, and orchestrating seamless user experiences through UI/UX design. With a passion for creativity and a commitment to excellence, our team at Project ctrl. embarks on each project with a dedication to surpassing client expectations and leaving a lasting impact in the realm of design.  </p>
+              <p class="intro-2">Through a meticulous blend of artistic vision, technical prowess, and strategic insight, we endeavor to not only meet but exceed the unique needs and aspirations of every client we serve. Whether it's shaping brand narratives, immortalizing moments in time through stunning photography, or engineering intuitive digital interfaces, Project ctrl. is your partner in transforming ideas into visually compelling realities that resonate with audiences and elevate brands to new heights of success. </p>
           </div>
   </div>
 
@@ -36,8 +36,8 @@ import { RouterView } from 'vue-router'
 }
 #up{
   position: absolute;
-  height: 800px;
-  width: 800px;
+  height: 0%;
+  width: 500px;
   border-radius: 50%;
   background-image: linear-gradient(80deg, rgb(255,165,0), rgb(224, 255, 255,0.5));
   filter: blur(80px);
@@ -139,7 +139,8 @@ h4{
 }
 .intro-1{
   font-family: 'Poppins', serif;
-      position: absolute;
+  font-size: 0.8rem;
+  position: absolute;
   color: #f3f3f3;
   margin-left: 5%;
   margin-top: 35%;
@@ -147,6 +148,7 @@ h4{
 }
 .intro-2{
   font-family: 'Poppins', serif;
+  font-size: 0.8rem;
   position: absolute;
   color: #f3f3f3;
   margin-left: 60%;
