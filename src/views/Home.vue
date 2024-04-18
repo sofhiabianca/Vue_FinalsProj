@@ -4,218 +4,153 @@ import { RouterView } from 'vue-router'
 </script>
 
 <template>
-
-  <body>
     <Nav/>
     <RouterView />
-    <div class="landingPage">
-      <h1 class="heading-1">Project</h1>
-      <h1 class="heading-2">P</h1>
-      <h1 class="heading-3">ortfolio</h1>
-      
-    </div>
-    
+    <div class="background">
+      <section id="up"></section>
+      <section id="down"></section>
+      <section id="left"></section>
+      <section id="right"></section>
+          <div class="title">
+              <h2 class="heading-1">P</h2>
+              <h2 class="heading-2">ortfolio</h2>
+              <hr>
+          </div>
+          <div class="info">
+              <h4>Introduction</h4>
+              <p class="intro-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+              <p class="intro-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+          </div>
+  </div>
 
-    <div class="footer">
-    <div class="row">
-      <hr>
-      <h6>© 2024 by LACANDOLA & MALALA</h6>
-    </div>
-</div>
-  </body>
 </template>
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins&display=swap');
-body{
-  background-color: #fff;
-}
-
-/*STYLE FOR MENU*/
-.menu-wrap {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-
-.menu-wrap .toggler {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  cursor: pointer;
-  width: 50px;
-  height: 50px;
-  opacity: 0;
-}
-
-.menu-wrap .hamburger {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: 60px;
-  height: 60px;
-  padding: 1rem;
-  background: var(--primary-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Hamburger Line */
-.menu-wrap .hamburger > div {
-  position: relative;
-  flex: none;
-  width: 100%;
-  height: 2px;
-  background: #000000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.4s ease;
-}
-
-/* Hamburger Lines - Top & Bottom */
-.menu-wrap .hamburger > div::before,
-.menu-wrap .hamburger > div::after {
-  content: '';
-  position: absolute;
-  z-index: 1;
-  top: -10px;
-  width: 100%;
-  height: 2px;
-  background: inherit;
-}
-
-/* Moves Line Down */
-.menu-wrap .hamburger > div::after {
-  top: 10px;
-}
-
-/* Toggler Animation */
-.menu-wrap .toggler:checked + .hamburger > div {
-  transform: rotate(135deg);
-}
-
-/* Turns Lines Into X */
-.menu-wrap .toggler:checked + .hamburger > div:before,
-.menu-wrap .toggler:checked + .hamburger > div:after {
-  top: 0;
-  transform: rotate(90deg);
-}
-
-/* Rotate On Hover When Checked */
-.menu-wrap .toggler:checked:hover + .hamburger > div {
-  transform: rotate(225deg);
-}
-
-/* Show Menu */
-.menu-wrap .toggler:checked ~ .menu {
-  visibility: visible;
-}
-
-.menu-wrap .toggler:checked ~ .menu > div {
-  transform: scale(1);
-  transition-duration: var(--menu-speed);
-}
-
-.menu-wrap .toggler:checked ~ .menu > div > div {
-  opacity: 1;
-  transition:  opacity 0.4s ease 0.4s;
-}
-
-.menu-wrap .menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  visibility: hidden;
+.background{
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-image: linear-gradient(80deg, rgb(255,165,0), rgb(199,10,114));
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
-
-.menu-wrap .menu > div {
-  background: rgb(72,72,72,0.8);
+#up{
+  position: absolute;
+  height: 800px;
+  width: 800px;
   border-radius: 50%;
-  width: 200vw;
-  height: 200vw;
-  display: flex;
-  flex: none;
-  align-items: center;
-  justify-content: center;
-  transform: scale(0);
-  transition: all 0.4s ease;
+  background-image: linear-gradient(80deg, rgb(255,165,0), rgb(224, 255, 255,0.5));
+  filter: blur(80px);
+  animation: down 40s infinite;
+}
+#down{
+  position: absolute;
+  right: 0;
+  height: 500px;
+  width: 500px;
+  border-radius: 50%;
+  background-image: linear-gradient(80deg, rgb(255,165,0), 	rgb(255, 182, 193));
+  filter: blur(80px);
+  animation: up 30s infinite;
+}
+#left{
+  position: absolute;
+  height: 500px;
+  width: 500px;
+  border-radius: 50%;
+  background-image: linear-gradient(80deg, rgb(5, 124, 172), rgb(183, 253, 52, 0.8));
+  filter: blur(80px);
+  animation: left 30s 1s infinite;
+}
+#right{
+  position: absolute;
+  height: 500px;
+  width: 500px;
+  border-radius: 50%;
+  background-image: linear-gradient(80deg, rgb(26, 248, 18, 0.6), rgb(199, 10, 52, 0.8));
+  filter: blur(80px);
+  animation: right 40s infinite;
+}
+@keyframes down{
+  0%, 100%{
+      top: -100px;
+  }
+  70%{
+      top: 700px;
+  }
+}
+@keyframes up{
+  0%, 100%{
+      bottom: -100px;
+  }
+  70%{
+      bottom: 700px;
+  }
+}
+@keyframes left{
+  0%, 100%{
+      bottom: -100px;
+  }
+  70%{
+      bottom: 1300px;
+  }
+}
+@keyframes right{
+  0%, 100%{
+      bottom: -100px;
+  }
+  70%{
+      bottom: 1300px;
+  }
 }
 
-.menu-wrap .menu > div > div {
-  text-align: center;
-  max-width: 90vw;
-  max-height: 100vh;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.menu-wrap .menu > div > div > ul > li {
-  font-family: "Poppins", sans-serif;
-  list-style: none;
-  color: #fff;
-  font-size: 2rem;
-  padding: 1rem;
-  transition: color .3s ease-in-out, box-shadow .5s ease-in-out;
-}
-      .menu-wrap .menu > div > div > ul > li:hover {
-        color: #000000;
-        box-shadow: inset 600px 0 0 0 #ffffff;;
-      }
-.menu-wrap .menu > div > div > ul > li > a {
-  color: inherit;
-  text-decoration: none;
-  transition: color 0.4s ease;
-}
-
-/*STYLE FOR LANDING PAGE*/
 .heading-1{
-  font-family: "Playfair Display", serif;
-  font-size: 8rem;
-  color: #000000;
-  text-transform: uppercase;
-  margin-left: 25%;
-  margin-top: 10%;
+font-family: "Pinyon Script", cursive;
+position: absolute;
+font-size: 9rem;
+color: #f3f3f3;
+text-transform: uppercase;
+margin-left: 23%;
+margin-top: 10%;
+
 }
 .heading-2{
-  font-family: "Pinyon Script", cursive;
-  font-size: 9rem;
-  color: #000000;
-  text-transform: uppercase;
-  margin-left: 38%;
-
+font-family: "Playfair Display", serif;
+position: absolute;
+font-size: 8rem;
+color: #f3f3f3;
+text-transform: uppercase;
+margin-left: 33%;
+margin-top: 9%;
 }
-.heading-3{
-  font-family: "Playfair Display", serif;
-  font-size: 8rem;
-  color: #000000;
-  text-transform: uppercase;
-  margin-left: 45%;
-  margin-top: -13.5%;
+hr{
+  width: 90%;
+  position: absolute;
+  margin-left: 5%;
+  margin-top: 30%;
 }
-.row h6{
-  width:100%;
-  margin:1% 0%;
-  padding:0.6% 0%;
-  color:#000000;
-  font-size:1rem;
-  font-family: "Poppins", sans-serif;
+h4{
+  font-family: 'Poppins', serif;
+  position: absolute;
+  color: #f3f3f3;
+  font-weight: bold;
+  margin-left: 5%;
+  margin-top:32%;
 }
-
-/*STYLE FOR FOOTER*/
-.footer{
-background:transparent;
-margin-top: 25%;
-text-align:center;
+.intro-1{
+  font-family: 'Poppins', serif;
+      position: absolute;
+  color: #f3f3f3;
+  margin-left: 5%;
+  margin-top: 35%;
+  width: 35%;
+}
+.intro-2{
+  font-family: 'Poppins', serif;
+  position: absolute;
+  color: #f3f3f3;
+  margin-left: 60%;
+  margin-top: 35%;
+  width: 35%;
 }
 </style>

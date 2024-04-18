@@ -2,167 +2,72 @@
 import { RouterView } from 'vue-router'
 
 
+
 </script>
 
 <template>
      
-  <div class="intro">
-    <h1 class="introText">Introduction</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt arcu id libero suscipit scelerisque. Donec tristique neque nec neque tempus, a placerat lacus ultricies. Pellentesque in nibh vel ipsum posuere porttitor eget non purus. Duis vel sapien non augue luctus suscipit. Proin iaculis diam auctor ex venenatis, in dictum augue fringilla. Nullam consectetur condimentum nibh sed hendrerit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam suscipit velit et commodo ultrices. Duis ac gravida neque.</p>
+  <div class="container">
+    <div class="description">
+      <h3 class="intro">Project ctrl. is a visual designing team, specializing in branding design, photography & UI/UX.</h3>
+      <img class="photo1" src="../images/1.jpg"/>
+      <img class="photo2" src="../images/2.jpg"/>
+      <h3 class="logo1">ct</h3>
+      <h3 class="logo2">rl.</h3>
+    </div>
   </div>
 
   
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins&display=swap');
-/*STYLE FOR MENU*/
-.menu-wrap {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1;
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+/*STYLE FOR Intro PAGE*/
+.logo{
+  text-align: right;
+  color: #A53316;
+  font-family: "Libre Baskerville", serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 40px;
+  margin-top: 10px;
+  margin-right: 15px;
 }
-
-.menu-wrap .toggler {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  cursor: pointer;
-  width: 50px;
-  height: 50px;
-  opacity: 0;
+.logo1{
+  color: #A53316;
+  font-family: "Libre Baskerville", serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 100px;
+  margin-top: -540px;
+  margin-left: 63%;
 }
-
-.menu-wrap .hamburger {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: 60px;
-  height: 60px;
-  padding: 1rem;
-  background: var(--primary-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  .logo2{
+  color: #A53316;
+  font-family: "Libre Baskerville", serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 100px;
+  margin-top: -75px;
+  margin-left: 65%;
+  }
+.intro{
+  font-size: 20px;
+  width: 20%;
+  margin-top: 10%;
+  margin-left: 35%;
+  font-style: italic;
 }
-
-/* Hamburger Line */
-.menu-wrap .hamburger > div {
-  position: relative;
-  flex: none;
-  width: 100%;
-  height: 2px;
-  background: #000000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.4s ease;
+.photo1{
+  height: 30%;
+  width: 30%;
+  margin-bottom: 10%;
+  margin-top: -150px;
 }
-
-/* Hamburger Lines - Top & Bottom */
-.menu-wrap .hamburger > div::before,
-.menu-wrap .hamburger > div::after {
-  content: '';
-  position: absolute;
-  z-index: 1;
-  top: -10px;
-  width: 100%;
-  height: 2px;
-  background: inherit;
-}
-
-/* Moves Line Down */
-.menu-wrap .hamburger > div::after {
-  top: 10px;
-}
-
-/* Toggler Animation */
-.menu-wrap .toggler:checked + .hamburger > div {
-  transform: rotate(135deg);
-}
-
-/* Turns Lines Into X */
-.menu-wrap .toggler:checked + .hamburger > div:before,
-.menu-wrap .toggler:checked + .hamburger > div:after {
-  top: 0;
-  transform: rotate(90deg);
-}
-
-/* Rotate On Hover When Checked */
-.menu-wrap .toggler:checked:hover + .hamburger > div {
-  transform: rotate(225deg);
-}
-
-/* Show Menu */
-.menu-wrap .toggler:checked ~ .menu {
-  visibility: visible;
-}
-
-.menu-wrap .toggler:checked ~ .menu > div {
-  transform: scale(1);
-  transition-duration: var(--menu-speed);
-}
-
-.menu-wrap .toggler:checked ~ .menu > div > div {
-  opacity: 1;
-  transition:  opacity 0.4s ease 0.4s;
-}
-
-.menu-wrap .menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  visibility: hidden;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.menu-wrap .menu > div {
-  background: rgb(72,72,72,0.8);
-  border-radius: 50%;
-  width: 200vw;
-  height: 200vw;
-  display: flex;
-  flex: none;
-  align-items: center;
-  justify-content: center;
-  transform: scale(0);
-  transition: all 0.4s ease;
-}
-
-.menu-wrap .menu > div > div {
-  text-align: center;
-  max-width: 90vw;
-  max-height: 100vh;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.menu-wrap .menu > div > div > ul > li {
-  list-style: none;
-  color: #fff;
-  font-size: 2rem;
-  padding: 1rem;
-}
-      .menu-wrap .menu > div > div > ul > li:hover {
-        color: #000000;
-      }
-.menu-wrap .menu > div > div > ul > li > a {
-  color: inherit;
-  text-decoration: none;
-  transition: color 0.4s ease;
-}
-
-/* STYLE FOR INTRO */
-.introText{
-  font-family: "Playfair Display", serif;
-  text-align: center;
+.photo2{
+  height: 35%;
+  width: 35%;
+  margin-top: -400px;
+  margin-left: 65%;
 }
 </style>

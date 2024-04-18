@@ -170,39 +170,6 @@ import { RouterLink } from 'vue-router'
   transition: color 0.4s ease;
 }
 
-/*STYLE FOR LANDING PAGE*/
-.heading-1{
-  font-family: "Playfair Display", serif;
-  font-size: 8rem;
-  color: #000000;
-  text-transform: uppercase;
-  margin-left: 25%;
-  margin-top: 10%;
-}
-.heading-2{
-  font-family: "Pinyon Script", cursive;
-  font-size: 9rem;
-  color: #000000;
-  text-transform: uppercase;
-  margin-left: 38%;
-
-}
-.heading-3{
-  font-family: "Playfair Display", serif;
-  font-size: 8rem;
-  color: #000000;
-  text-transform: uppercase;
-  margin-left: 45%;
-  margin-top: -13.5%;
-}
-.row h6{
-  width:100%;
-  margin:1% 0%;
-  padding:0.6% 0%;
-  color:#000000;
-  font-size:1rem;
-  font-family: "Poppins", sans-serif;
-}
 
 /*STYLE FOR FOOTER*/
 .footer{
