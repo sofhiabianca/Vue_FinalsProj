@@ -18,7 +18,7 @@ import { RouterView } from 'vue-router'
       <div class="right-side">
   
   <div class="topic-text">Tell us about your vision.</div>
-  <div class="topic-text">Get in touch with us.</div>
+  <div class="topic-text">Get in touch.</div>
 
   <form action="#">
     <div class="input-box">
