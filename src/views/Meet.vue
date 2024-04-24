@@ -23,8 +23,8 @@ import { RouterView } from 'vue-router'
                 <h2 class="text-name-2">Sofhia</h2>
             </div>
             <div class="row-role">
-                <h2 class="text-role-1">Student</h2>
-                <h2 class="text-role-2">Student</h2>
+                <h2 class="text-role-1"><RouterLink to="/Charm">Student</RouterLink></h2>
+                <h2 class="text-role-2"><RouterLink to="/Sofhia">Student</RouterLink></h2>
             </div>
             <div class="row">
                 <h2 class="text-desc-1">Charmela is Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h2>
@@ -103,6 +103,8 @@ margin-top: 5%;
     padding-top: 2px;
     margin-left: 38%;
     margin-top: 1%;
+    text-decoration: none;
+
 }
     .text-role-1:hover{
         color:#f3f3f3;
@@ -123,6 +125,8 @@ margin-top: 5%;
     padding-top: 2px;
     margin-right: 20.5%;
     margin-top: 1%;
+    text-decoration: none;
+
 }
     .text-role-2:hover{
         color:#f3f3f3;
