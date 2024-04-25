@@ -22,6 +22,7 @@ import { RouterView } from 'vue-router'
       <h3 class="sub-title-2">eveloping and Designing |</h3>
       <p>Check what's about Project CTRL</p>
     </div>
+  </div>
 
     <div class="container">
       <div class="section-2">
@@ -32,7 +33,24 @@ import { RouterView } from 'vue-router'
         <p class="sub-desc">Project ctrl. is a visual designing team, specializing in branding design, photography & UI/UX.</p>
       </div>
     </div>
-  </div>
+
+    <div class="container">
+      <div class="section-3">
+        <img src="../images/intro-landing-3.png" class="bg-sec-3">
+        <h1 class="desc-sec-1">About —</h1>
+        <h1 class="desc-sec-2">Us</h1>
+        <h2 class="desc-sub-1">P</h2>
+        <h2 class="desc-sub-2">roject ctrl. stands as a dynamic and innovative visual designing team, distinguished by its expertise in crafting 
+          compelling brand identities, capturing captivating moments through photography, and orchestrating seamless user experiences through UI/UX 
+          design. With a passion for creativity and a commitment to excellence, our team at Project ctrl. embarks on each project with a dedication 
+          to surpassing client expectations and leaving a lasting impact in the realm of design. Through a meticulous blend of artistic vision, 
+          technical prowess, and strategic insight, we endeavor to not only meet but exceed the unique needs and aspirations of every client we serve. 
+          Whether it's shaping brand narratives, immortalizing moments in time through stunning photography, or engineering intuitive digital interfaces, 
+          Project ctrl. is your partner in transforming ideas into visually compelling realities that resonate with audiences and elevate brands to new 
+          heights of success.</h2>
+          <h2><RouterLink to="/Meet" class="button">Find out more</RouterLink></h2>
+      </div>
+    </div>
 
   
 </template>
@@ -48,6 +66,11 @@ import { RouterView } from 'vue-router'
 .bg-sec-2{
   width: 100%;
   height: 100%;
+}
+.bg-sec-3{
+  width: 100%;
+  height: 100%;
+  margin-top: 20%;
 }
 .date-heading{
   text-align: center;
@@ -106,6 +129,53 @@ p{
   margin-top: 5%;
   margin-left: 25%;
 }
+.desc-sec-1{
+  font-family: "Playfair Display", serif;
+  font-size: 4rem;
+  margin-top: -800px;
+  margin-left: 60%;
+ 
+}
+.desc-sec-2{
+  font-family: "Playfair Display", serif;
+  font-size: 4rem;
+  font-style: italic;
+  margin-top: -20px;
+  margin-left: 68%;
+ 
+}
+.desc-sub-1{
+  font-family: "Pinyon Script", cursive;
+  font-size: 3rem;
+  color: #A53316;
+  margin-left: 50%;
+  margin-top: 5%;
+}
+.desc-sub-2{
+  width: 40%;
+  font-family: 'Poppins', serif;
+  font-size: 0.8rem;
+  margin-left: 53%;
+  margin-top: -3%;
+  text-align: justify;
+}
+.button{
+  font-family: 'Poppins', serif;
+  border: 1px solid #6f6f6f;
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: black;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+  margin-left: 53%;
+}
+  .button:hover{
+    background-color: #A53316;
+    color: #ffff;
+    transition: 0.5s all ease;
+  }
 /* .logo{
   text-align: right;
   color: #A53316;
