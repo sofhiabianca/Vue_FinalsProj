@@ -9,11 +9,28 @@ import { RouterView } from 'vue-router'
      
   <div class="container">
     <div class="description">
-      <h3 class="intro">Project ctrl. is a visual designing team, specializing in branding design, photography & UI/UX.</h3>
+      <!-- <h3 class="intro">Project ctrl. is a visual designing team, specializing in branding design, photography & UI/UX.</h3>
       <img class="photo1" src="../images/1.jpg"/>
       <img class="photo2" src="../images/2.jpg"/>
       <h3 class="logo1">ct</h3>
-      <h3 class="logo2">rl.</h3>
+      <h3 class="logo2">rl.</h3> -->
+      <h3 class="date-heading">2024</h3>
+      <h2 class="title-heading-1">Project</h2>
+      <h2 class="title-heading-2">ctrl</h2>
+      <img src="../images/intro-landing.png" class="background">
+      <h3 class="sub-title-1">D</h3>
+      <h3 class="sub-title-2">eveloping and Designing |</h3>
+      <p>Check what's about Project CTRL</p>
+    </div>
+
+    <div class="container">
+      <div class="section-2">
+        <img src="../images/intro-landing-2.png" class="bg-sec-2">
+        <h1 class="desc-1">Created</h1>
+        <h1 class="desc-2">by Lacandola</h1>
+        <h1 class="desc-3">& Malala</h1>
+        <p class="sub-desc">Project ctrl. is a visual designing team, specializing in branding design, photography & UI/UX.</p>
+      </div>
     </div>
   </div>
 
@@ -21,9 +38,75 @@ import { RouterView } from 'vue-router'
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins&display=swap');
 /*STYLE FOR Intro PAGE*/
-.logo{
+.background{
+  width: 100%;
+  height: 100%;
+  margin-top: -20%;
+}
+.bg-sec-2{
+  width: 100%;
+  height: 100%;
+}
+.date-heading{
+  text-align: center;
+  margin-top: 8%;
+  font-size: 0.8rem;
+  color: #6f6f6f;
+}
+.title-heading-1{
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  margin-left: 40%;
+}
+.title-heading-2{
+  font-family: "Pinyon Script", cursive;
+  font-size: 4rem;
+  margin-left: 53%;
+  margin-top: -6.2%;
+  color: #A53316;
+}
+.sub-title-1{
+  font-family: "Pinyon Script", cursive;
+  font-size: 3rem;
+  color: #A53316;
+  margin-left: 30%;
+}
+.sub-title-2{
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  margin-left: 33.2%;
+  margin-top: -4.2%;
+}
+p{
+  font-family: 'Poppins', serif;
+  margin-left: 33.2%;
+}
+.desc-1{
+  font-family: "Playfair Display", serif;
+  font-size: 3.5rem;
+  margin-top: -510px;
+  margin-left: 40%;
+}
+.desc-2{
+  font-family: "Playfair Display", serif;
+  font-size: 3.5rem;
+  margin-top: -10px;
+  margin-left: 40%;
+}
+.desc-3{
+  font-family: "Playfair Display", serif;
+  font-size: 3.5rem;
+  margin-top: -10px;
+  margin-left: 50%;
+}
+.sub-desc{
+  font-family: 'Poppins', serif;
+  margin-top: 5%;
+  margin-left: 25%;
+}
+/* .logo{
   text-align: right;
   color: #A53316;
   font-family: "Libre Baskerville", serif;
@@ -69,5 +152,5 @@ import { RouterView } from 'vue-router'
   width: 35%;
   margin-top: -400px;
   margin-left: 65%;
-}
+} */
 </style>
