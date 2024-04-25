@@ -23,8 +23,8 @@ import { RouterView } from 'vue-router'
                 <h2 class="text-name-2">Sofhia</h2>
             </div>
             <div class="row-role">
-                <h2 class="text-role-1"><RouterLink to="/Charm">Student</RouterLink></h2>
-                <h2 class="text-role-2"><RouterLink to="/Sofhia">Student</RouterLink></h2>
+                <h2><RouterLink to="/Charm" class="text-role-1">Student</RouterLink></h2>
+                <h2><RouterLink to="/Sofhia" class="text-role-2">Student</RouterLink></h2>
             </div>
             <div class="row">
                 <h2 class="text-desc-1">Charmela is Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h2>
@@ -97,11 +97,12 @@ margin-top: 5%;
     text-transform: uppercase;
     font-style: italic;
     border: 1px solid #3f3f3f;
+    color: #3f3f3f;
     border-radius: 50%;
-    padding-left: 1%;
-    padding-right: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
     padding-top: 2px;
-    margin-left: 38%;
+    margin-left: 520px;
     margin-top: 1%;
     text-decoration: none;
 
@@ -119,12 +120,13 @@ margin-top: 5%;
     text-transform: uppercase;
     font-style: italic;
     border: 1px solid #3f3f3f;
+    color: #3f3f3f;
     border-radius: 50%;
-    padding-left: 1%;
-    padding-right: 1%;
+    padding-left: 12px;
+    padding-right: 12px;
     padding-top: 2px;
-    margin-right: 20.5%;
-    margin-top: 1%;
+    margin-left: -350px;
+    margin-top: 2px;
     text-decoration: none;
 
 }
