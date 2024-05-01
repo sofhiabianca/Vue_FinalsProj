@@ -127,7 +127,7 @@ const handleScroll = () => {
       <br>
         <h5 class="heading-5">Quezon City, Manila, Philippines</h5>
         <h5 class="heading-5">+63 96719093234</h5>
-        <h5 class="heading-5">helloteamctrl@gmail.com</h5>
+        <h5 class="heading-5">teamprojectctrl@gmail.com</h5>
 
       </div>
 
