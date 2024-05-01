@@ -1,49 +1,140 @@
 <script setup>
-import { RouterView } from 'vue-router'
+import { ref, onMounted} from 'vue'
+import emailjs from 'emailjs-com'
+import Swal from 'sweetalert2'
+
+const serviceID = 'service_7iczfdu'; 
+const templateID = 'template_im9t6ht'; 
+const userID = 'ArcD3va3jPKwE6JLB'; 
+
+const sendForm = (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const formData = new FormData(form);
+  const params = {
+    from_name: formData.get('name'),
+    from_email: formData.get('email'),
+    message: formData.get('message'),
+  };
+
+  emailjs.send(serviceID, templateID, params, userID)
+   .then((response) => {
+      console.log('SUCCESS!', response.status, response.text);
+      form.reset(); // Clear the form fields
+      
+      Swal.fire({
+      title: "Message sent",
+      text: "Thank you for messaging us!",
+      icon: "success",
+      confirmButtonColor: "#951e1e",
+        customClass: {
+        title: 'poppins-title',
+        content: 'poppins-content'
+        }
+
+});
+
+    })
+   .catch((err) => {
+      console.log('FAILED...', err);
+    });
+}
+
+
+const isVisible = ref(false);
+let previousScrollPosition = 0;
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll);
+});
+
+const handleScroll = () => {
+  const wholePageContainer = document.querySelector('.whole-page-container');
+  const scrollPosition = window.scrollY;
+  const windowHeight = window.innerHeight;
+  const containerTop = wholePageContainer.offsetTop;
+
+  if (scrollPosition + windowHeight > containerTop) {
+    if (!isVisible.value) {
+      isVisible.value = true;
+    }
+  } else {
+    if (isVisible.value) {
+      isVisible.value = false;
+    }
+  }
+
+  previousScrollPosition = scrollPosition;
+
+};
 
 </script>
+
+
 <template>
     <body>
-        <div class="contactPage">
-      <h1 class="heading-3">Contact</h1>
-      <h1 class="heading-2">Us</h1>
-      
-    </div>
-    
-    <div class="content">
-      <div class="left-side">
-        <img class="bella" src="../images/bella.jpg">
-        
+      <div class="contactPage">
+        <h1 class="heading-3">Contact</h1>
+        <h1 class="heading-2">Us</h1>
       </div>
+    
+      <div class="content">
+        <div class="left-side">
+          <img class="bella" src="../images/bella.jpg">  
+        </div>
+      
       <div class="right-side">
-  
-  <div class="topic-text">Tell us about your vision.</div>
-  <div class="topic-text">Get in touch.</div>
+        <div class="topic-text">Tell us about your vision.</div>
+        <div class="topic-text">Get in touch.</div>
 
-  <form action="#">
-    <div class="input-box">
-      <input type="text" placeholder="Name">
-    </div>
-    <div class="input-box">
-      <input type="text" placeholder="E-mail">
-    </div>
-    <div class="input-box message-box">
-        <input type="text" placeholder="Message">
-    </div>
-    <div class="button">
-      <input type="button" value="Send" >
-    </div>
-  </form>
-</div>
-</div>
+        <form @submit="sendForm">
+          <div class="input-box">
+            <input type="text" 
+            v-model="name"
+            name="name"
+            placeholder="Name"
+            required minlength="3">
+            
+          </div>
+          
+          <div class="input-box">
+            <input type="email" 
+            v-model="email"
+            name="email"
+            placeholder="E-mail"
+            required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+          </div>
+        
+            <div class="input-box message-box">
+              <textarea name="message"
+              v-model="message"
+              placeholder="Message" required></textarea>
+          </div>
+        
+            <div class="button">
+              <input type="submit" value="Send" >
+          </div>
+        </form>
+        </div>
+        <br>
+      </div>
+      <br>
 
-    <div class="footer">
-    <div class="row">
-      <hr>
-      <h6>© 2024 by LACANDOLA & MALALA</h6>
-    </div>
-</div>
-</body>
+      <div class="whole-page-container" :class="{ animate: isVisible }">
+        <div class="flower"> <img src="../images/flower.png" /> </div> 
+
+        <h3 class="heading-4">head office</h3>
+      <br>
+        <h5 class="heading-5">Quezon City, Manila, Philippines</h5>
+        <h5 class="heading-5">+63 96719093234</h5>
+        <h5 class="heading-5">helloteamctrl@gmail.com</h5>
+
+      </div>
+
+
+
+
+    </body>
 </template>
 
 <style scoped>
@@ -58,15 +149,15 @@ html, body{ height:100%
   font-family: "Pinyon Script", cursive;
   font-size: 3.5rem;
   color: black;
-  margin-left:270px;
+  margin-left:310px;
   margin-top: -50px;
 }
 .heading-3{
   font-family: "Playfair Display", serif;
   font-size: 3rem;
   color: black;
-  margin-top: 30px;
-  margin-left: 90px;
+  margin-top: 65px;
+  margin-left: 135px;
 }
 
 .content{
@@ -74,7 +165,7 @@ font-family: "Poppins", serif;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: -30px;
+  margin-top: -40px;
 }
 .content .left-side{
   width: 25%;
@@ -129,30 +220,41 @@ font-family: "Poppins", serif;
   height: 50px;
   width: 90%;
   margin: 12px 0;
+
 }
+
 .right-side .input-box input,
 .right-side .input-box textarea{
+  font-family: "Poppins", sans-serif;
   height: 100%;
   width: 100%;
-  border: none;
-  outline: none;
+  border: 1px solid black;
   font-size: 14px;
   background: white;
   border-radius: 6px;
   padding: 0 15px;
   resize: none;
+
+
+}
+.input-box.message-box textarea {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
 }
 .right-side .message-box{
   min-height: 110px;
 }
 .right-side .input-box textarea{
   padding-top: 6px;
+  resize: vertical;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 .right-side .button{
   display: inline-block;
   margin-top: 12px;
 }
-.right-side .button input[type="button"]{
+.right-side .button input[type="submit"]{
   color: #fff;
   font-size: 14px;
   outline: none;
@@ -163,7 +265,7 @@ font-family: "Poppins", serif;
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.button input[type="button"]:hover{
+.button input[type="submit"]:hover{
   background: #951e1e;
 }
 .bella {
@@ -185,6 +287,61 @@ font-family: "Poppins", serif;
    width: 100%;
    margin-left: 0;
  }
+
+ .whole-page-container {
+    background-color: #951e1e;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    transform: translateY(100%);
+  }
+
+ .animate {
+    animation: slideUp 1.5s forwards;
+  }
+
+  @keyframes slideUp {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+.heading-4 {
+  font-family: "Playfair Display", serif;
+  justify-content: center;
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.heading-5 {
+  font-family: "Poppins", serif;
+  justify-content: center;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.flower {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 150px; /* adjust the size to your liking */
+  height:450px; /* adjust the size to your liking */
+}
+
+
+
 /*STYLE FOR FOOTER*/
 .row h6{
   width:100%;
@@ -199,6 +356,17 @@ font-family: "Poppins", serif;
 background:transparent;
 margin-top: 150px;
 text-align:center;
+}
+
+/*sweetalert2*/
+.poppins-title {
+  font-family: 'Poppins', sans-serif;
+  color: black !important;
+}
+
+.poppins-content {
+  font-family: 'Poppins', sans-serif;
+  color: black !important;
 }
 
 </style>

@@ -27,7 +27,14 @@ import { RouterView } from 'vue-router'
                 <h2><RouterLink to="/Sofhia" class="text-role-2">Student</RouterLink></h2>
             </div>
             <div class="row">
-                <h2 class="text-desc-1">Charmela is Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h2>
+                <h2 class="text-desc-1">Charmela is a dynamic force in the world of visual design, 
+                    with expertise in branding design and photography. 
+                    With a keen eye for detail and a passion for creativity, 
+                    she brings brands to life through compelling visual identities and 
+                    captures impressive moments.
+                    She offers a comprehensive approach to design that ensures 
+                    every project exceeds expectations and brings a majestic blend 
+                    of creativity and expertise to every project.</h2>
                 <h2 class="text-desc-2">Sofhia is Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h2>
             </div>
         </div>
