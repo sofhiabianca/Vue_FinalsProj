@@ -35,10 +35,16 @@ import { RouterView } from 'vue-router'
                     She offers a comprehensive approach to design that ensures 
                     every project exceeds expectations and brings a majestic blend 
                     of creativity and expertise to every project.</h2>
-                <h2 class="text-desc-2">Sofhia is Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h2>
+                <h2 class="text-desc-2">Sofhia is a dynamic creative developer who seamlessly merges her expertise 
+                    in aesthetic design with front-end development. With a keen eye for detail and a passion for innovation, 
+                    she crafts visually stunning digital experiences that captivate users. Sofhia's unique approach combines 
+                    her artistic sensibility with technical proficiency, resulting in websites and applications that not only function 
+                    flawlessly but also exude beauty and elegance. Her ability to blend creativity with coding expertise makes her a valuable 
+                    asset in the ever-evolving landscape of digital design and development.</h2>
             </div>
         </div>
     </div>
+    <Footer/>
 </template>
 
 <style scoped>
@@ -157,9 +163,9 @@ margin-top: 5%;
     font-family: 'Poppins', serif;
     position: flex;
     font-size: 0.6rem;
-    margin-right: 10%;
+    margin-right: 15%;
     margin-top: 1%;
-    margin-left: -5.5%;
+    margin-left: -1%;
     width: 80%;
 }
 </style>

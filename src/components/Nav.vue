@@ -1,11 +1,25 @@
-
 <script setup>
-import { RouterLink } from 'vue-router'
+import { RouterLink, useRoute } from 'vue-router';
+import { ref, watch } from 'vue';
 
+// Create a ref for the toggler checkbox
+const toggler = ref(null);
+
+// Get the current route
+const route = useRoute();
+
+// Watch for route changes
+watch(route, () => {
+ // Uncheck the toggler checkbox when the route changes
+ if (toggler.value) {
+    toggler.value.checked = false;
+ }
+});
 </script>
+
 <template>
     <div class="menu-wrap">
-    <input type="checkbox" class="toggler">
+      <input type="checkbox" class="toggler" ref="toggler">
     <div class="hamburger"><div></div></div>
     <div class="menu">
       <div>
