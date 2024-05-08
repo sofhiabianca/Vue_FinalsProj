@@ -1,21 +1,28 @@
 <script setup>
-import { RouterView } from 'vue-router'
+import { onMounted } from 'vue';
 
-document.addEventListener('DOMContentLoaded', function() {
- const nextButton = document.querySelector('.text-next');
- const charmImage = document.getElementById('charm');
- const sofhiaImage = document.getElementById('sofhia');
+onMounted(() => {
+  const nextButton = document.querySelector('.text-next');
+  const charmImage = document.getElementById('charm-pic');
+  const sofhiaImage = document.getElementById('sofhia-pic');
 
- nextButton.addEventListener('click', function() {
-    // Toggle the classes to switch positions
-    charmImage.classList.toggle('charm');
-    charmImage.classList.toggle('sofhia');
-    sofhiaImage.classList.toggle('charm');
-    sofhiaImage.classList.toggle('sofhia');
- });
+  let currentImage = charmImage; // Start with charmImage as the current image
+
+  nextButton.addEventListener('click', function() {
+    // Determine which image is currently in view
+    if (currentImage === charmImage) {
+      currentImage = sofhiaImage;
+    } else {
+      currentImage = charmImage;
+    }
+
+    // Move the current image to the opposite position
+    currentImage.classList.remove('charm-pic');
+    currentImage.classList.add('sofhia-pic');
+  });
 });
-
 </script>
+
 
 <template>
     <Nav/>
@@ -53,8 +60,8 @@ document.addEventListener('DOMContentLoaded', function() {
   <hr class="line3">
 
         <div class="image">
-          <img src="../images/landing-charm.jpg" alt="" class="landing-charm" id="charm">
-          <img src="../images/landing-sofhia.jpg" alt="" class="landing-sofhia" id="sofhia">
+          <img src="../images/landing-charm.jpg" alt="" class="landing-charm" id="charm-pic">
+          <img src="../images/landing-sofhia.jpg" alt="" class="landing-sofhia" id="sofhia-pic">
         </div>
   
   <div class="next">
@@ -247,6 +254,7 @@ hr{
   margin-top: -5%;
   margin-left: 67%;
   position: absolute; 
+  cursor: pointer;
 }
 .view{
   font-family: 'Poppins', serif;
@@ -276,18 +284,19 @@ hr{
   margin-top: 9%;
 }
 .image img {
- transition: transform 1s ease;
- position: absolute;
- top: 0;
- left: 0;
+  transition: transform 1s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-.image img.charm {
- transform: translateX(0);
+.image img.charm-pic {
+  transform: translateX(0);
 }
 
-.image img.sofhia {
- transform: translateX(100%);
+.image img.sofhia-pic {
+  transform: translateX(100%);
 }
+
 
 </style>
