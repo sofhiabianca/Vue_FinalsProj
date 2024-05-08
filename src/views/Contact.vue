@@ -294,6 +294,7 @@ font-family: "Poppins", serif;
     width: 100%;
     position: relative;
     transform: translateY(100%);
+    margin-bottom: -135px;
   }
 
  .animate {
