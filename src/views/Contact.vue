@@ -7,13 +7,14 @@ const serviceID = 'service_7iczfdu';
 const templateID = 'template_im9t6ht'; 
 const userID = 'ArcD3va3jPKwE6JLB'; 
 
+
 const sendForm = (e) => {
   e.preventDefault();
   const form = e.target;
   const formData = new FormData(form);
   const params = {
-    from_name: formData.get('name'),
-    from_email: formData.get('email'),
+    name: formData.get('name'),
+    email: formData.get('email'),
     message: formData.get('message'),
   };
 
