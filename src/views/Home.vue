@@ -1,158 +1,302 @@
 <script setup>
-import { RouterView } from 'vue-router'
+import { onMounted } from 'vue';
 
+onMounted(() => {
+  const nextButton = document.querySelector('.text-next');
+  const charmImage = document.getElementById('charm-pic');
+  const sofhiaImage = document.getElementById('sofhia-pic');
+
+  let currentImage = charmImage; // Start with charmImage as the current image
+
+  nextButton.addEventListener('click', function() {
+    // Determine which image is currently in view
+    if (currentImage === charmImage) {
+      currentImage = sofhiaImage;
+    } else {
+      currentImage = charmImage;
+    }
+
+    // Move the current image to the opposite position
+    currentImage.classList.remove('charm-pic');
+    currentImage.classList.add('sofhia-pic');
+  });
+});
 </script>
+
 
 <template>
     <Nav/>
     <RouterView />
-    <div class="background">
-      <section id="up"></section>
-      <section id="down"></section>
-      <section id="left"></section>
-      <section id="right"></section>
-          <div class="title">
-              <h2 class="heading-1">P</h2>
-              <h2 class="heading-2">ortfolio</h2>
-              <hr>
-          </div>
-          <div class="info">
-              <h4>Introduction</h4>
-              <p class="intro-1">Project ctrl. stands as a dynamic and innovative visual designing team, distinguished by its expertise in crafting compelling brand identities, capturing captivating moments through photography, and orchestrating seamless user experiences through UI/UX design. With a passion for creativity and a commitment to excellence, our team at Project ctrl. embarks on each project with a dedication to surpassing client expectations and leaving a lasting impact in the realm of design.  </p>
-              <p class="intro-2">Through a meticulous blend of artistic vision, technical prowess, and strategic insight, we endeavor to not only meet but exceed the unique needs and aspirations of every client we serve. Whether it's shaping brand narratives, immortalizing moments in time through stunning photography, or engineering intuitive digital interfaces, Project ctrl. is your partner in transforming ideas into visually compelling realities that resonate with audiences and elevate brands to new heights of success. </p>
-          </div>
+   
+    <div class="container">
+      <img src="../images/pic-landing.jpg" alt="" class="pic-landing">
+      <div class="button">
+                <h2><RouterLink to="/Introduction" class="btn1">BECOMING <br> CREATIVE</RouterLink></h2>
+                <h2><RouterLink to="/Meet" class="btn2">EVERYTHING <br>  WE DO</RouterLink></h2>
+            </div>
+    </div>
+
+<div class="cards">
+  <div class="card-1">
+    <img src="../images/logo1.png" alt="" class="logo-1">
+    <h4 class="text-1">DESIGNING</h4>
+  </div>
+  <div class="card-2">
+    <img src="../images/logo2.png" alt="" class="logo-2">
+    <h4 class="text-2">PHOTOGRAPHY</h4>
+  </div>
+  <div class="card-3">
+    <img src="../images/logo3.png" alt="" class="logo-3">
+    <h4 class="text-3">DEVELOPING</h4>
+  </div>
+</div>
+
+<div class="center-section">
+  <hr>
+  <h1 class="marquee">WELCOME TO PROJECT CTRL. PORTFOLIO</h1>
+  <hr class="line2">
+
+  <h1 class="marquee">PHOTOGRAPHY — DEVELOPING — DESIGNING — CREATIVITY</h1>
+  <hr class="line3">
+
+        <div class="image">
+          <img src="../images/landing-charm.jpg" alt="" class="landing-charm" id="charm-pic">
+          <img src="../images/landing-sofhia.jpg" alt="" class="landing-sofhia" id="sofhia-pic">
+        </div>
+  
+  <div class="next">
+    <h2 class="text-next">NEXT</h2>
   </div>
 
+  <div class="view">
+    <h2><RouterLink to="/Meet" class="view">VIEW ALL</RouterLink></h2>
+  </div>
+</div>
+
+<div class="socials">
+  <h1 class="social-text">SOCIALS</h1>
+  <div class="charm">
+    <h2 class="name">Charm Malala</h2>
+    <h4 class="links">linkedin: </h4>
+    <h4 class="links">instagram: @charmelaclaire</h4>
+    <h4 class="links">contact: +63 967 190 9680</h4>
+  </div>
+  <div class="sofhia">
+    <h2 class="name">Sofhia Lacandola</h2>
+    <h4 class="links">linkedin: </h4>
+    <h4 class="links">instagram: @so.fhia</h4>
+    <h4 class="links">contact: +63 939 141 6624</h4>
+  </div>
+
+</div>
 </template>
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins&display=swap');
-.background{
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  background-image: linear-gradient(80deg, rgb(255,165,0), rgb(199,10,114));
-  overflow: hidden;
+.pic-landing{
+  width: 70%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  border-radius: 5%;
 }
-#up{
+.btn1{
+  line-height: 1;
+  font-family: 'Poppins', serif;
+  font-size: 1rem;
+  text-decoration: none;
+  text-align: center;
+  background-color: white;
+  color: #3f3f3f;
   position: absolute;
-  height: 0%;
-  width: 500px;
-  border-radius: 50%;
-  background-image: linear-gradient(80deg, rgb(255,165,0), rgb(224, 255, 255,0.5));
-  filter: blur(80px);
-  animation: down 40s infinite;
-}
-#down{
-  position: absolute;
-  right: 0;
-  height: 500px;
-  width: 500px;
-  border-radius: 50%;
-  background-image: linear-gradient(80deg, rgb(255,165,0), 	rgb(255, 182, 193));
-  filter: blur(80px);
-  animation: up 30s infinite;
-}
-#left{
-  position: absolute;
-  height: 500px;
-  width: 500px;
-  border-radius: 50%;
-  background-image: linear-gradient(80deg, rgb(5, 124, 172), rgb(183, 253, 52, 0.8));
-  filter: blur(80px);
-  animation: left 30s 1s infinite;
-}
-#right{
-  position: absolute;
-  height: 500px;
-  width: 500px;
-  border-radius: 50%;
-  background-image: linear-gradient(80deg, rgb(26, 248, 18, 0.6), rgb(199, 10, 52, 0.8));
-  filter: blur(80px);
-  animation: right 40s infinite;
-}
-@keyframes down{
-  0%, 100%{
-      top: -100px;
-  }
-  70%{
-      top: 700px;
-  }
-}
-@keyframes up{
-  0%, 100%{
-      bottom: -100px;
-  }
-  70%{
-      bottom: 700px;
-  }
-}
-@keyframes left{
-  0%, 100%{
-      bottom: -100px;
-  }
-  70%{
-      bottom: 1300px;
-  }
-}
-@keyframes right{
-  0%, 100%{
-      bottom: -100px;
-  }
-  70%{
-      bottom: 1300px;
-  }
-}
-
-.heading-1{
-font-family: "Pinyon Script", cursive;
-position: absolute;
-font-size: 9rem;
-color: #f3f3f3;
-text-transform: uppercase;
-margin-left: 23%;
-margin-top: 10%;
+  margin-left: 38%;
+  margin-top: -15%;
+  border-radius: 20%;
+  border: 2px solid black;
+  padding: 1% 3% 1% 3%;
 
 }
-.heading-2{
-font-family: "Playfair Display", serif;
-position: absolute;
-font-size: 8rem;
-color: #f3f3f3;
-text-transform: uppercase;
-margin-left: 33%;
-margin-top: 9%;
+.btn2{
+  line-height: 1;
+  font-family: 'Poppins', serif;
+  font-size: 1rem;
+  text-decoration: none;
+  text-align: center;
+  background-color: white;
+  color: #3f3f3f;
+  position: absolute;
+  margin-left: 52%;
+  margin-top: -15%;
+  border-radius: 20%;
+  border: 2px solid black;
+  padding: 1% 3% 1% 3%;
+
+}
+.card-1{
+  width: 12%;
+  height: 10%;
+  margin-left: 20%;
+  margin-top: -2%;
+  background-color: white;
+  position: absolute;
+  border: 2px solid black;
+  border-radius: 15%;
+}
+.logo-1{
+  width: 25%;
+  margin-left: 8%;
+  margin-top: 5%;
+}
+.text-1{
+  font-family: 'Poppins', serif;
+  margin-top: -25%;
+  margin-left: 38%;
+
+}
+.card-2{
+  width: 15%;
+  height: 10%;
+  margin-left: 42%;
+  margin-top: -2%;
+  background-color: white;
+  position: absolute;
+  border: 2px solid black;
+  border-radius: 15%;
+}
+.logo-2{
+  width: 23%;
+  margin-left: 8%;
+  margin-top: 3%;
+}
+.text-2{
+  font-family: 'Poppins', serif;
+  margin-top: -22%;
+  margin-left: 30%;
+
+}
+.card-3{
+  width: 12%;
+  height: 10%;
+  margin-left: 65%;
+  margin-top: -2%;
+  background-color: white;
+  position: absolute;
+  border: 2px solid black;
+  border-radius: 15%;
+}
+.logo-3{
+  width: 25%;
+  margin-left: 8%;
+  margin-top: 5%;
+}
+.text-3{
+  font-family: 'Poppins', serif;
+  margin-top: -25%;
+  margin-left: 38%;
+
+}
+h1{
+  font-family: 'Poppins', serif;
+  font-size: 2.9rem;
 }
 hr{
-  width: 90%;
-  position: absolute;
-  margin-left: 5%;
-  margin-top: 30%;
+  margin-top: 25%;
 }
-h4{
-  font-family: 'Poppins', serif;
-  position: absolute;
-  color: #f3f3f3;
-  font-weight: bold;
-  margin-left: 5%;
-  margin-top:32%;
+.line2, .line3{
+  margin-top: 0%;
 }
-.intro-1{
-  font-family: 'Poppins', serif;
-  font-size: 0.8rem;
-  position: absolute;
-  color: #f3f3f3;
-  margin-left: 5%;
-  margin-top: 35%;
-  width: 35%;
+.marquee {
+ display: inline-block;
+ white-space: nowrap;
+ overflow: hidden;
+ position: relative;
+ animation: marquee 20s linear infinite;
 }
-.intro-2{
+
+.marquee:hover {
+ animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+ }
+  100% {
+    transform: translateX(-100%);
+ }
+}
+.landing-charm{
+  width: 25%;
+  margin-left: 40%;
+  margin-top: 60%;
+  border: 2px dashed black;
+  border-radius: 10%;
+  transform: rotate(-0.01turn);
+}
+.landing-sofhia{
+  width: 25%;
+  margin-left: 44%;
+  margin-top: 63%;
+  border: 2px solid black;
+  border-radius: 10%;
+  transform: rotate(-0.01turn);
+}
+.text-next{
   font-family: 'Poppins', serif;
-  font-size: 0.8rem;
-  position: absolute;
-  color: #f3f3f3;
+  font-size: 1rem;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 4%;
+  padding: 8px 8px 8px 8px;
+  text-align: center;
+  margin-top: -5%;
+  margin-left: 67%;
+  position: absolute; 
+  cursor: pointer;
+}
+.view{
+  font-family: 'Poppins', serif;
+  font-size: 1rem;
+  color: #3f3f3f;
   margin-left: 60%;
-  margin-top: 35%;
-  width: 35%;
+  margin-top: 15%;
 }
+.name{
+  font-family: "Pinyon Script", cursive;
+  font-size: 2rem;
+  color: #951e1e;
+  margin-left: 20%;
+  margin-top: 2%;
+}
+.links{
+  font-family: "Playfair Display", serif;
+  margin-left: 20%;
+}
+.social-text{
+  margin-top: 5%;
+  margin-left: 10%;
+}
+.sofhia{
+  text-align: right;
+  margin-right: 20%;
+  margin-top: 9%;
+}
+.image img {
+  transition: transform 1s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.image img.charm-pic {
+  transform: translateX(0);
+}
+
+.image img.sofhia-pic {
+  transform: translateX(100%);
+}
+
+
 </style>

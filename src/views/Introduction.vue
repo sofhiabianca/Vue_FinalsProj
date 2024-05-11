@@ -71,6 +71,7 @@ import { RouterView } from 'vue-router'
   width: 100%;
   height: 100%;
   margin-top: 20%;
+  margin-bottom: 15%;
 }
 .date-heading{
   text-align: center;
