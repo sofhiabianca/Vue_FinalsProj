@@ -126,7 +126,7 @@ const handleScroll = () => {
         <h3 class="heading-4">head office</h3>
       <br>
         <h5 class="heading-5">Quezon City, Manila, Philippines</h5>
-        <h5 class="heading-5">+63 96719093234</h5>
+        <h5 class="heading-5">+63 9671909680</h5>
         <h5 class="heading-5">teamprojectctrl@gmail.com</h5>
 
       </div>
@@ -302,7 +302,7 @@ font-family: "Poppins", serif;
 
   @keyframes slideUp {
     0% {
-      transform: translateY(100%);
+      transform: translateY(50%);
     }
     100% {
       transform: translateY(0);
@@ -354,7 +354,6 @@ font-family: "Poppins", serif;
 
 .footer{
 background:transparent;
-margin-top: 150px;
 text-align:center;
 }
 
