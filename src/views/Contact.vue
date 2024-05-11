@@ -71,7 +71,6 @@ const handleScroll = () => {
 
 </script>
 
-
 <template>
     <body>
       <div class="contactPage">
